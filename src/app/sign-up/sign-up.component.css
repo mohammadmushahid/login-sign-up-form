@@ -1,0 +1,63 @@
+#section-main {
+    background-image: url(https://img.freepik.com/premium-photo/colorful-sky-with-clouds-stars_820616-388.jpg?w=2000);
+    background-size: cover;
+   padding-top: 2rem;
+  padding-bottom: 2rem;
+
+    
+}
+
+  .btn-button button {
+    width:-webkit-fill-available;
+    height: 3rem;
+    font-size: 17px;
+    background: #9a0f9c;
+    border: none;
+    color: white;
+    border-radius: 5px
+  }
+
+  .btn-button-1 button {
+    width:-webkit-fill-available;
+    height: 3rem;
+    font-size: 17px;
+    background-color: antiquewhite;
+    border: none;
+    color: black;
+    border-radius: 5px
+  }
+
+  .image-2  {
+    height: 100%;
+    padding: 21px
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .image-2 img  {
+    animation: up-down 2s ease-in-out infinite alternate-reverse both;
+  }
+
+  @keyframes up-down {
+    0% {
+      transform: translateY(10px);
+    }
+  
+    100% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .paragraph  {
+    font-size: 17px;
+  }
+
+  .form-control {
+    height: 3rem;
+  }
+
+  
+

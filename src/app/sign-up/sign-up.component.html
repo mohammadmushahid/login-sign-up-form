@@ -1,0 +1,74 @@
+<section id="section-main">
+    <div class="container">
+        <mat-card>
+            <div class="row">
+                <div class="col-lg-6 px-5 ">
+                    <div class="row mt-5">
+                        <div class="text-center">
+                            <h1 class="fs-3">Create an account</h1>
+                            <p class="paragraph">Sign up now unblock exclusive access!</p>
+                        </div>
+                       <form [formGroup]="signupReactiveForm" (ngSubmit)="submitStudentForm()">
+                        <div class="col-lg-12">
+                            <label for="validationDefault01" class="form-label">Your name</label>
+                            <input type="text" placeholder="First Last" class="form-control" formControlName="firstName" 
+                            [class.is-invalid]="!signupReactiveForm.controls['firstName'].valid && signupReactiveForm.controls['firstName'].touched"
+                            [class.is-valid]="signupReactiveForm.controls['firstName'].valid" required>
+                            <div *ngIf="signupReactiveForm.controls['firstName'].valid" class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div *ngIf="!signupReactiveForm.controls['firstName'].valid && signupReactiveForm.controls['firstName'].touched" class="invalid-feedback">
+                                    This field is required!
+                            </div>
+
+                        </div>
+                        <div class="col-lg-12 my-3">
+                            <label for="validationDefault01" class="form-label">Email</label>
+                            <input type="text" placeholder="you@email.com" class="form-control" formControlName="Email" 
+                            [class.is-invalid]="!signupReactiveForm.controls['Email'].valid && signupReactiveForm.controls['Email'].touched"
+                            [class.is-valid]="signupReactiveForm.controls['Email'].valid" required >
+                            <div *ngIf="signupReactiveForm.controls['Email'].valid" class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div *ngIf="!signupReactiveForm.controls['Email'].valid && signupReactiveForm.controls['Email'].touched" class="invalid-feedback">
+                                    Email field is required!
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <label for="validationDefault01" class="form-label">Password</label>
+                            <input type="text" placeholder="********" class="form-control" formControlName="password"
+                            [class.is-invalid]="!signupReactiveForm.controls['password'].valid && signupReactiveForm.controls['password'].touched"
+                            [class.is-valid]="signupReactiveForm.controls['password'].valid" required >
+                            <div *ngIf="signupReactiveForm.controls['password'].valid" class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div *ngIf="!signupReactiveForm.controls['password'].valid && signupReactiveForm.controls['password'].touched" class="invalid-feedback">
+                                password field is required!
+                            </div>
+                        </div>
+                        <div class="col-lg-12 mt-4">
+                            <div class="btn-button ">
+                                <button class="" type="submit" [disabled]="signupReactiveForm.invalid">Create Account</button>
+                            </div>
+                        </div>
+                       </form>
+                        <div class="col-lg-12 my-3">
+                            <div class="btn-button-1">
+                                <button type="button" routerLink="/sign">sign in</button>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col-lg-6">
+                    <div class="image-2">
+                        <img src="https://img.freepik.com/premium-vector/illustration-vector-graphic-cartoon-character-login_516790-1261.jpg?w=2000"
+                            alt="">
+                    </div>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+</section>

@@ -10,11 +10,11 @@ import { Router } from '@angular/router';
 })
 export class SignUpComponent implements OnInit {
   signupReactiveForm!: FormGroup;
-  myData: any[] = [];
-  constructor(private formBuilder: FormBuilder , private router: Router) { }
+  
+  constructor(private formBuilder: FormBuilder) { }
   ngOnInit(): void {
     this.signupForm();
-    console.log("myData===>", this.myData)
+    console.log("myData===>", this.signupReactiveForm.value)
   }
 
   signupForm(){
@@ -28,11 +28,7 @@ export class SignUpComponent implements OnInit {
   }
 
   submitStudentForm(){
-    // this.myData.push(this.signupReactiveForm.value);
-    console.log("myyyy===>",this.myData);
-    localStorage.setItem('myAccount',JSON.stringify(this.signupReactiveForm.value)); //JSON.stringify use for save Object Data
-    this.router.navigate(['/login'])
-
+    console.log(this.signupReactiveForm.value);
   }
 
 }

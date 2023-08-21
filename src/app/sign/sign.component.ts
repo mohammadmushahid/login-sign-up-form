@@ -9,20 +9,18 @@ import { Router } from '@angular/router';
 })
 export class SignComponent implements OnInit {
 
-  constructor(private formBuilder: FormBuilder , private router: Router){}
+  constructor(private formBuilder: FormBuilder){}
 
   musahid!: FormGroup;
-  myAccountData!: any;
+  
 
 
   ngOnInit(): void {
-    let mydata: any = localStorage.getItem('myAccount');
-    this.myAccountData = JSON.parse(mydata)
-    this.handles();
-    
+    this.signreactiveform();
+    console.log(this.musahid.value)
   }
 
-  malikji(){
+  signreactiveform(){
     this.musahid = this.formBuilder.group({
       'email': [null ,[Validators.required]],
       'password': [null ,[Validators.required]],
@@ -30,11 +28,6 @@ export class SignComponent implements OnInit {
   }
 
   handles(){
-    if(this.musahid.value.email === this.myAccountData.email && this.musahid.value.password === this.myAccountData.password){
-      console.log("login Successfully!!");
-      this.router.navigate(['/manage-employee'])
-    }else{
-      alert("Please Fill Correct Information!!!")
-    }
+   console.log(this.musahid.value)
   }
   }

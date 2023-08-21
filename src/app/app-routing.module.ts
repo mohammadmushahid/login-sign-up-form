@@ -4,6 +4,7 @@ import { SignComponent } from './sign/sign.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { ManageEmployeesComponent } from './manage-employees/manage-employees.component';
 import { NewFormComponent } from './new-form/new-form.component';
+import { ApiIntegrationComponent } from './api-integration/api-integration.component';
 
 const routes: Routes = [
   {
@@ -17,7 +18,11 @@ const routes: Routes = [
   },
   {
     path: 'new-form', component: NewFormComponent
+  },
+  {
+    path: 'api-integration', component: ApiIntegrationComponent
   }
+
 ];
 
 @NgModule({

@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class SignUpComponent implements OnInit {
   signupReactiveForm!: FormGroup;
   
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private router: Router) { }
   ngOnInit(): void {
     this.signupForm();
     console.log("myData===>", this.signupReactiveForm.value)
@@ -29,6 +29,10 @@ export class SignUpComponent implements OnInit {
 
   submitStudentForm(){
     console.log(this.signupReactiveForm.value);
+    localStorage.setItem('myAccount',JSON.stringify (this.signupReactiveForm.value));
+    this.router.navigate(['/sign'])
+
+    // alert('bore')
   }
 
 }

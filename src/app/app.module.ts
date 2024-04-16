@@ -21,8 +21,20 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NewFormComponent } from './new-form/new-form.component';
 import { ApiIntegrationComponent } from './api-integration/api-integration.component';
 import { HttpClientModule } from '@angular/common/http';
+
+import { reducers,  metaReducers } from './reducers';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { EffectsModule } from '@ngrx/effects';
+import { UserEffects } from './user.effects';
+import {MatDialogModule} from '@angular/material/dialog';
 import { StoreModule } from '@ngrx/store';
-import { reducers, metaReducers } from './reducers';
+import {MatSelectModule} from '@angular/material/select';
+import { CommonModule } from '@angular/common';
+import {MatButtonModule} from '@angular/material/button';
+
+import { CrudComponent } from './crud/crud.component';
+
 
 @NgModule({
   declarations: [
@@ -33,7 +45,8 @@ import { reducers, metaReducers } from './reducers';
     
     ManageEmployeesComponent,
     NewFormComponent,
-    ApiIntegrationComponent
+    ApiIntegrationComponent,
+    CrudComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,13 +57,26 @@ import { reducers, metaReducers } from './reducers';
     MatIconModule,
     ReactiveFormsModule,
     FormsModule,
+    MatButtonModule,
     MatTableModule,
     CdkTableModule,
     DragDropModule,
+    MatSelectModule,
     CdkTreeModule,
+    MatDialogModule,
     MatMenuModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    StoreRouterConnectingModule.forRoot(),
+    StoreModule.forRoot(reducers, { metaReducers }),
+    EffectsModule.forRoot([UserEffects]),
+    StoreModule.forRoot(),
+    EffectsModule.forRoot(),
+    StoreDevtoolsModule.instrument(),
+
+  ],
+  bootstrap:[
+    AppComponent
   ]
 })
 export class AppModule { }

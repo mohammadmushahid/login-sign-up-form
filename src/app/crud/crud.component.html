@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-lg-6 ">
+            <mat-form-field class="d-grid" appearance="outline">
+                <mat-label>Choose an option</mat-label>
+                <mat-select>
+                  <mat-option *ngFor="let val of education" [value]="val">{{val}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+        </div>
+    
+       <div class="col-lg-6">
+        <mat-form-field appearance="outline" class="d-grid">
+            <mat-label>number</mat-label>
+            <input matInput placeholder="Ex." type="number">
+          </mat-form-field>
+       </div>
+    </div>
+    
+    <div class="mat-dialog-action ">
+        <button mat-raised-button color="accent">Cancel</button>
+        <button mat-raised-button color="primary">Primary</button>
+        <button class="btn btn-primary mx-3">subdcribe</button>
+    </div>
+</div>
+
+
